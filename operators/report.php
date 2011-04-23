@@ -4,7 +4,7 @@
  - Copyright 2011 
  - Stephen Bush 
  - trininox@gmail.com 
- - Version 0.4.21
+ - Version 0.4.22
  - Includes jQuery.js
 -->
 <html>
@@ -34,11 +34,12 @@ echo "<tr>
 	<th>eas_lp2</th>
 	<th>eas_inet</th>
 	<th>eas_type</th>
-
+	
 
 	<th>eas_from</th>
 	<th>self_type</th>
-	
+	<th>eas_aired</th>
+	<th>eas_error</th>
 
 	<th>tower_status</th>
 	<th>tower_fail</th>
@@ -64,11 +65,12 @@ while($r=mysql_fetch_array($result))
    $eas_lp1=$r["eas_lp1"];
    $eas_lp2=$r["eas_lp2"];
    $eas_inet=$r["eas_inet"];
-   $eas_type=$r["eas_type"];
-
+   $eas_type=$r["eas_type"];   
 
    $eas_from=$r["eas_from"];
    $self_type=$r["self_type"];
+   $eas_aired=$r["eas_aired"];
+   $eas_error=$r["eas_error"];
  
 
    $tower_status=$r["tower_status"];
@@ -96,10 +98,11 @@ while($r=mysql_fetch_array($result))
    <th><?php echo $eas_lp2 ?></th>
    <th><?php echo $eas_inet ?></th>
    <th><?php echo $eas_type ?></th>
-
-
+   
    <th><?php echo $eas_from ?></th>
    <th><?php echo $self_type ?></th>
+   <th><?php echo $eas_aired ?></th>
+   <th><?php echo $eas_error ?></th>
 
 
    <th><?php echo $tower_status ?></th>

@@ -3,7 +3,7 @@
  - Copyright 2011 
  - Stephen Bush 
  - trininox@gmail.com 
- - Version 0.4.21
+ - Version 0.4.22
  - Includes jQuery.js
 -->
 <?php
@@ -39,7 +39,8 @@ if($result){
 	
 	<th>EAS Rx From</th>
 	<th>EAS Tx Type</th>
-	
+	<th>Aired</th>
+	<th>Errored</th>	
 
 	<th>Tower Status</th>
 	<th>Tower Failure Note</th>
@@ -70,7 +71,8 @@ if($result){
 
    '</th>'.'<th>'.$row["eas_from"].
    '</th>'.'<th>'.$row["self_type"].
-   
+   '</th>'.'<th>'.$row["eas_aired"].
+   '</th>'.'<th>'.$row["eas_error"].   
 
    '</th>'.'<th>'.$row["tower_status"].
    '</th>'.'<th>'.$row["tower_fail"].

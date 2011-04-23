@@ -4,7 +4,7 @@
  - Copyright 2011 
  - Stephen Bush 
  - trininox@gmail.com 
- - Version 0.4.21
+ - Version 0.4.22
  - Includes jQuery.js
 -->
 <html>
@@ -14,6 +14,7 @@
 <script type="text/javascript" src="js/main.js"></script>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <?php
+set_include_path('C:/wamp/www/eas');
 require_once ('function_connect.php');
 
 $date = date('Y-m-d');
@@ -57,6 +58,8 @@ Development Build
 <input id="eas_lp2" class="text" name="eas_lp2" size="20" type="text" value="Initials" onFocus="clearDefault(this)" style="color:#CCC" maxlength="3">
 <label for="eas_inet">I-NET:</label>
 <input id="eas_inet" class="text" name="eas_inet" size="20" type="text" value="Initials" onFocus="clearDefault(this)" style="color:#CCC" maxlength="3">
+<label for="check_error">Error:</label>
+<input id="check_error" class="check" name="check_error" size="10" type="checkbox">
 <button class="entry">Add Entry</button>
 </fieldset>
 </form>
@@ -83,12 +86,16 @@ Development Build
 <option value="AMBER">AMBER</option>
 <option value="OTHER">OTHER</option>
 </select>
-<label for="eas_time">Aired at Time:</label>
+<label for="eas_time">Time:</label>
 <input id="eas_time" class="text" name="eas_time" size="20" type="text" value="<?php echo $time; ?>" onFocus="clearDefault(this)" maxlength="8">
 <label for="eas_from">From:</label>
 <input id="eas_from" class="text" name="eas_from" size="20" type="text" value="WAJI" onFocus="clearDefault(this)" style="color:#CCC" maxlength="6">
 <label for="eas_initials">Initials:</label>
 <input id="eas_initials" class="text" name="eas_initials" size="20" type="text" value="Initials" onFocus="clearDefault(this)" style="color:#CCC" maxlength="3">
+<label for="eas_aired">Aired:</label>
+<input id="eas_aired" class="check" name="eas_aired" size="10" type="checkbox">
+<label for="eas_error">Error:</label>
+<input id="eas_error" class="check" name="eas_error" size="10" type="checkbox">
 <button class="entry">Add Entry</button>
 </fieldset>
 </form>
@@ -115,10 +122,14 @@ Development Build
 <option value="AMBER">AMBER</option>
 <option value="OTHER">OTHER</option>
 </select>
-<label for="self_time">Aired at Time:</label>
+<label for="self_time">Time:</label>
 <input id="self_time" class="text" name="self_time" size="20" type="text" value="<?php echo $time; ?>" onFocus="clearDefault(this)" maxlength="8">
 <label for="self_initials">Initials:</label>
 <input id="self_initials" class="text" name="self_initials" size="20" type="text" value="Initials" onFocus="clearDefault(this)" style="color:#CCC" maxlength="3">
+<label for="self_aired">Aired:</label>
+<input id="self_aired" class="check" name="self_aired" size="5" type="checkbox">
+<label for="self_error">Error:</label>
+<input id="self_error" class="check" name="self_error" size="10" type="checkbox">
 <button class="entry">Add Entry</button>
 </fieldset>
 </form>
@@ -133,7 +144,6 @@ Development Build
 <option value="WPTA">WPTA/WISE</option>
 <option value="WEEK">WEEK/WAOE</option>
 <option value="WHOI">WHOI</option>
-<option value="WMYD">WMYD</option>
 </select>
 <label for="tower_date">Date:</label>
 <input id="tower_date" class="text" name="tower_date" size="20" type="text" value="<?php echo $date; ?>" onFocus="clearDefault(this)" maxlength="10">
@@ -164,9 +174,6 @@ Development Build
 </div>
 <div id="whoi" name="whoi">
 <iframe src="http://docs.google.com/viewer?url=http%3A%2F%2F184.18.155.20%2FEAS%2Foperators%2Fwhoi.pdf&embedded=true" width="825" height="980" style="border: none; margin: 10px 10px 10px 10px;"></iframe>
-</div>
-<div id="wmyd" name="wmyd">
-<iframe src="http://docs.google.com/viewer?url=http%3A%2F%2F184.18.155.20%2FEAS%2Foperators%2Fwmyd.pdf&embedded=true" width="825" height="980" style="border: none; margin: 10px 10px 10px 10px;"></iframe>
 </div>
 <div id="chiefsreview">
 

@@ -8,8 +8,10 @@
 -->
 <?php
 	
-	require_once ("function_connect.php");
-
+	require('function_connect.php');
+	$date = date('Y-m-d');
+	$time = date('H:i:s');
+	
 	$sql = "SELECT tower_fss FROM logs WHERE tower_fss = 'on'";
 	$result = mysql_query($sql) or die ("Error with tower MySQL"); 
 	$row = mysql_fetch_row($result); 
@@ -29,7 +31,6 @@
 	<option value="WPTA" selected="selected">WPTA</option>
 	<option value="WEEK">WEEK</option>
 	<option value="WHOI">WHOI</option>
-	<option value="WMYD">WMYD</option>
 	</select>
 	<label for="tower_fail">Failure Noted:</label>
 	<input id="tower_fail" class="textwide" name="tower_fail" size="100" type"text" value="Beacon  Out" onFocus="clearDefault(this)" style="color:#CCC">
@@ -42,7 +43,6 @@
 	<option value="WPTA">WPTA</option>
 	<option value="WEEK">WEEK</option>
 	<option value="WHOI">WHOI</option>
-	<option value="WMYD">WMYD</option>
 	</select>
 	<br>
 	<label for="fss_notified">FSS Notified:</label>

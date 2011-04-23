@@ -3,7 +3,7 @@
  * Copyright 2011 
  * Stephen Bush 
  * trininox@gmail.com 
- * Version 0.4.21
+ * Version 0.4.22
  */
 	function clearDefault(el) {
   		if (el.defaultValue==el.value) el.value = ""
@@ -94,6 +94,7 @@
 					var eas_lp1     = $('#eas_lp1').attr('value'); 
 					var eas_lp2     = $('#eas_lp2').attr('value');
 					var eas_inet     = $('#eas_inet').attr('value');
+					var check_error     = $('#check_error').attr('value');  
 				
 				if (eas_lp1==null || eas_lp1=="" || eas_lp1=="Initials"){
   					alert("EAS LP1 must be initialed");
@@ -111,9 +112,8 @@
 						$.ajax({  
 							type: "POST",  
 							url: "operators/lpcheck.php",  
-							data: "station_lpcheck="+ station_lpcheck +"& report_date="+ report_date +"& eas_lp1="+ eas_lp1 +"& eas_lp2="+ eas_lp2 +"& eas_inet="+ eas_inet,  
+							data: "station_lpcheck="+ station_lpcheck +"& report_date="+ report_date +"& eas_lp1="+ eas_lp1 +"& eas_lp2="+ eas_lp2 +"& eas_inet="+ eas_inet +"& check_error="+ check_error,  
 							success: function(){
-								
     							$('div#lpsuccess').fadeIn();
 								$('div#chiefsreview').load('operators/report.php');
   							},
@@ -131,6 +131,8 @@
 					var eas_time     = $('#eas_time').attr('value');
 					var eas_from     = $('#eas_from').attr('value');
 					var eas_initials     = $('#eas_initials').attr('value');
+					var eas_error     = $('#eas_error').attr('value');
+					var eas_aired     = $('#eas_aired').attr('value');
 					 
 				if (eas_from==null || eas_from==""){
   					alert("The 'From:' field must be entered");
@@ -148,9 +150,9 @@
 						$.ajax({  
 							type: "POST",  
 							url: "operators/eastest.php",  
-							data: "eas_type="+ eas_type +"& eas_station="+ eas_station +"& eas_time="+ eas_time +"& eas_from="+ eas_from +"& initials="+ eas_initials,  
+							data: "eas_type="+ eas_type +"& eas_station="+ eas_station +"& eas_time="+ eas_time +"& eas_from="+ eas_from +"& initials="+ eas_initials +"& eas_error="+ eas_error +"& eas_aired="+ eas_aired,  
 							success: function(){
-								$('form#eastestform').toggle();
+								
     							$('div#eassuccess').fadeIn();
 								$('div#chiefsreview').load('operators/report.php');
   							},
@@ -166,6 +168,8 @@
 					var self_station     = $('#self_station').attr('value'); 
 					var self_time     = $('#self_time').attr('value');
 					var self_initials     = $('#self_initials').attr('value');
+					var self_error     = $('#self_error').attr('value');
+					var self_aired     = $('#self_aired').attr('value');
 					
 				if (self_initials==null || self_initials=="" || self_initials=="Initials"){
   					alert("Initials must be entered");
@@ -179,9 +183,9 @@
 						$.ajax({  
 							type: "POST",  
 							url: "operators/selftest.php",  
-							data: "self_type="+ self_type +"& self_station="+ self_station +"& self_time="+ self_time +"& initials="+ self_initials,  
+							data: "self_type="+ self_type +"& self_station="+ self_station +"& self_time="+ self_time +"& initials="+ self_initials +"& self_error="+ self_error +"& self_aired="+ self_aired,  
 							success: function(){
-								$('form#selftestform').toggle();
+								
     							$('div#selfsuccess').fadeIn();
 								$('div#chiefsreview').load('operators/report.php');
   							},
@@ -221,7 +225,7 @@
 							url: "operators/towerlights.php",  
 							data: "tower_station="+ tower_station +"& tower_date="+ tower_date +"& tower_time="+ tower_time +"& tower_status="+ tower_status +"& initials="+ tower_initials,  
 							success: function(){
-								$('form#towerlightsform').toggle();
+								
     							$('div#towersuccess').fadeIn();
 								$('div#chiefsreview').load('operators/report.php');
   							},
@@ -285,9 +289,7 @@
 							
 							  
 							success: function(){
-								$('form#failureform').toggle();
-    							$('div#failsuccess').fadeIn();
-								$('div#chiefsreview').load('operators/report.php');
+								location.reload();
   							},
   							error: function(){
    								alert('failure');
@@ -338,10 +340,8 @@
 							+"& update_cancelled_initials="+ update_cancelled_initials, 
 							
 							  
-							success: function(){
-								$('form#updateform').toggle();
-    							$('div#failsuccess').fadeIn();
-								$('div#chiefsreview').load('operators/report.php');
+							success: function(){				
+								location.reload();
   							},
   							error: function(){
    								alert('failure');

@@ -15,13 +15,7 @@
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <?php
 require_once ('function_connect.php');
-## require_once ('functions.php');
-## include('operators/lpcheck.php');
-## include('operators/eastest.php');
-## include('operators/selftest.php');
-## include('operators/towerlights.php');
-## include('operators/failure.php');
-## include('operators/chiefsreview.php');
+
 $date = date('Y-m-d');
 $time = date('H:i:s');
 $datedtime = date("l \\t\h\e jS \of F Y \@ H:i:s");
@@ -162,6 +156,18 @@ $datedtime = date("l \\t\h\e jS \of F Y \@ H:i:s");
 <?php include('operators/functions.php'); ?>
 </div>
 <div id="failsuccess" class="success" style="display:none;">Entry Added Successfully.</div>
+<div id="wpta" name="wpta">
+<iframe src="http://docs.google.com/viewer?url=http%3A%2F%2F184.18.155.20%2FEAS%2Foperators%2Fwpta.pdf&embedded=true" width="825" height="980" style="border: none; margin: 10px 10px 10px 10px;"></iframe>
+</div>
+<div id="week" name="week">
+<iframe src="http://docs.google.com/viewer?url=http%3A%2F%2F184.18.155.20%2FEAS%2Foperators%2Fweek.pdf&embedded=true" width="825" height="980" style="border: none; margin: 10px 10px 10px 10px;"></iframe>
+</div>
+<div id="whoi" name="whoi">
+<iframe src="http://docs.google.com/viewer?url=http%3A%2F%2F184.18.155.20%2FEAS%2Foperators%2Fwhoi.pdf&embedded=true" width="825" height="980" style="border: none; margin: 10px 10px 10px 10px;"></iframe>
+</div>
+<div id="wmyd" name="wmyd">
+<iframe src="http://docs.google.com/viewer?url=http%3A%2F%2F184.18.155.20%2FEAS%2Foperators%2Fwmyd.pdf&embedded=true" width="825" height="980" style="border: none; margin: 10px 10px 10px 10px;"></iframe>
+</div>
 <div id="chiefsreview">
 
 </div>

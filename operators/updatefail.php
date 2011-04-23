@@ -3,7 +3,7 @@
  - Copyright 2011 
  - Stephen Bush 
  - trininox@gmail.com 
- - Version 0.4.21
+ - Version 0.4.22
  - Includes jQuery.js
 -->
 <?php  
@@ -13,16 +13,16 @@
     // CLIENT INFORMATION  
 	$mysql_date			= date('Y-m-d H:i:s');
 	$index	= htmlspecialchars(trim($_POST['index']));
-	$fail_initials		= htmlspecialchars(trim($_POST['update_initials']));
-	$fail_station	= htmlspecialchars(trim($_POST['update_station']));
-    $tower_fail		= htmlspecialchars(trim($_POST['update_fail']));  
+	$fail_initials		= strtoupper(htmlspecialchars(trim($_POST['update_initials'])));
+	$fail_station	= strtoupper(htmlspecialchars(trim($_POST['update_station'])));
+    $tower_fail		= strtoupper(htmlspecialchars(trim($_POST['update_fail'])));  
     $tower_fss		= htmlspecialchars(trim($_POST['update_fss']));  
-  	$fss_notified		= htmlspecialchars(trim($_POST['update_notified']));
+  	$fss_notified		= strtoupper(htmlspecialchars(trim($_POST['update_notified'])));
 	$fss_notam_assign		= htmlspecialchars(trim($_POST['update_notam_assign']));
-	$fss_initials		= htmlspecialchars(trim($_POST['update_initials']));
-	$fss_cleared			= htmlspecialchars(trim($_POST['update_cleared']));
+	$fss_initials		= strtoupper(htmlspecialchars(trim($_POST['update_initials'])));
+	$fss_cleared			= strtoupper(strtoupper(htmlspecialchars(trim($_POST['update_cleared']))));
 	$fss_cancelled			= htmlspecialchars(trim($_POST['update_cancelled']));
-	$fss_cancelled_initals	= htmlspecialchars(trim($_POST['update_cancelled_initials']));
+	$fss_cancelled_initals	= strtoupper(htmlspecialchars(trim($_POST['update_cancelled_initials'])));
 	
     $addEntry  = "UPDATE  `eas_reports`.`logs` SET  `station` =  '$fail_station',
 `report_update` =  '$mysql_date',

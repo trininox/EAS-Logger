@@ -1,8 +1,16 @@
+<!--
+ - PHP Document
+ - Copyright 2011 
+ - Stephen Bush 
+ - trininox@gmail.com 
+ - Version 0.4.21
+ - Includes jQuery.js
+-->
 <?php
 date_default_timezone_set('America/Fort_Wayne'); 
 /*Define constant to connect to database */
-DEFINE('DATABASE_USER', 'apps');
-DEFINE('DATABASE_PASSWORD', 'apps3401');
+DEFINE('DATABASE_USER', 'root');
+DEFINE('DATABASE_PASSWORD', '');
 DEFINE('DATABASE_HOST', 'localhost');
 DEFINE('DATABASE_NAME', 'eas_reports');
 

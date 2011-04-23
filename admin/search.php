@@ -3,7 +3,7 @@
  - Copyright 2011 
  - Stephen Bush 
  - trininox@gmail.com 
- - Version 0.4.21
+ - Version 0.4.22
  - Includes jQuery.js
 -->
 <?php
@@ -19,7 +19,7 @@ $keyword2 = mysqli_real_escape_string($dbc, $keyword2);
 
 
 
-$query = "select * from logs where report_date BETWEEN $keyword2 AND NOW() AND (eas_type like '%$keyword%' or initials like '%$keyword%' or station like '%$keyword%' or eas_lp1 like '%$keyword%' or self_type like '%$keyword%' or tower_fail like '%$keyword%' or eas_from like '%$keyword%')";
+$query = "select * from logs where report_date BETWEEN $keyword2 AND NOW() AND (eas_type like '%$keyword%' or initials like '%$keyword%' or station like '%$keyword%' or eas_lp1 like '%$keyword%' or self_type like '%$keyword%' or tower_fail like '%$keyword%' or eas_from like '%$keyword%' or eas_error like '%$keyword%' or tower_fss like '%$keyword%')";
 
 //echo $query;
 $result = mysqli_query($dbc,$query);
@@ -36,11 +36,11 @@ if($result){
 	<th>LP2</th>
 	<th>I-NET</th>
 	<th>EAS Rx Type</th>
-
 	
 	<th>EAS Rx From</th>
 	<th>EAS Tx Type</th>
-	
+	<th>Aired</th>
+	<th>Errored</th>
 
 	<th>Tower Status</th>
 	<th>Tower Failure Note</th>
@@ -71,7 +71,8 @@ if($result){
 
    '</th>'.'<th>'.$row["eas_from"].
    '</th>'.'<th>'.$row["self_type"].
-   
+   '</th>'.'<th>'.$row["eas_aired"].
+   '</th>'.'<th>'.$row["eas_error"].
 
    '</th>'.'<th>'.$row["tower_status"].
    '</th>'.'<th>'.$row["tower_fail"].
