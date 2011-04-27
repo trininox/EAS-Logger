@@ -14,7 +14,7 @@ include_once ('../function_dbconnect.php');
 if(isset($_GET['keyword'])){
     $keyword = 	trim($_GET['keyword']) ;
 $keyword = mysqli_real_escape_string($dbc, $keyword);
-$keyword2 = 	trim($_GET['date']) ;
+	$keyword2 = 	trim($_GET['date']) ;
 $keyword2 = mysqli_real_escape_string($dbc, $keyword2);
 
 

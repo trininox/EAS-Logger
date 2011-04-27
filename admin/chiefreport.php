@@ -3,7 +3,7 @@
  - Copyright 2011 
  - Stephen Bush 
  - trininox@gmail.com 
- - Version 0.4.22
+ - Version 0.4.26
  - Includes jQuery.js
 -->
 <?php
@@ -15,10 +15,12 @@ if(isset($_GET['fromdate'])){
 $keyword = mysqli_real_escape_string($dbc, $keyword);
 	$keyword2 = 	trim($_GET['mystation']) ;
 $keyword2 = mysqli_real_escape_string($dbc, $keyword2);
+	$keyword3 = 	trim($_GET['todate']) ;
+$keyword3 = mysqli_real_escape_string($dbc, $keyword3);
 
 
 
-$query = "select * from logs where report_date BETWEEN '$keyword' AND NOW() AND (station like '$keyword2%')";
+$query = "select * from logs where report_date BETWEEN '$keyword' AND '$keyword3' AND (station like '$keyword2%')";
 
 //echo $query;
 $result = mysqli_query($dbc,$query);

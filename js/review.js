@@ -3,7 +3,7 @@
  * Copyright 2011 
  * Stephen Bush 
  * trininox@gmail.com 
- * Version 0.4.21
+ * Version 0.4.26
  * Includes jQuery.js
  */
 function clearDefault(el) {
@@ -26,7 +26,7 @@ $(document).ready(function() {
 				$.ajax({  
 					type: "GET",  
 					url: "admin/chiefreport.php",  
-					data: "fromdate="+ fromdate +"& mystation="+ mystation,
+					data: "fromdate="+ fromdate +"& mystation="+ mystation +"& todate="+ todate,
 					  
 					success: function(server_response){
 						$('#resultdata').html(server_response).show();
@@ -45,6 +45,7 @@ $(document).ready(function() {
 		// we want to store the values from the form input box, then send via ajax below  
 			var fromdate     = $('form#chiefreportform').find('input[name=fromdate]').val();
 			var mystation		= $('form#chiefreportform').find('select[name=mystation]').val();
+			var todate     = $('form#chiefreportform').find('input[name=todate]').val();
 			var review_notes		= $('#review_notes').attr('value');
 			var chief_initials		= $('#chief_initials').attr('value'); 
 		
@@ -64,7 +65,7 @@ $(document).ready(function() {
 				$.ajax({  
 					type: "GET",  
 					url: "admin/updatereport.php",  
-					data: "fromdate="+ fromdate +"& mystation="+ mystation +"& review_notes="+ review_notes +"& chief_initials="+ chief_initials,
+					data: "fromdate="+ fromdate +"& mystation="+ mystation +"& review_notes="+ review_notes +"& chief_initials="+ chief_initials +"& todate="+ todate,
 					  
 					success: function(server_response){
 						$('#resultdata').html(server_response).show();

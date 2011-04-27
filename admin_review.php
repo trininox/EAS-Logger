@@ -1,4 +1,12 @@
 <!DOCTYPE HTML>
+<!--
+ - PHP Document
+ - Copyright 2011 
+ - Stephen Bush 
+ - trininox@gmail.com 
+ - Version 0.4.26
+ - Includes jQuery.js
+-->
 <html>
 <head>
 <script type="text/javascript" src="js/jquery.js"></script>
@@ -10,6 +18,7 @@ require_once ('function_connect.php');
 error_reporting (E_ALL ^ E_NOTICE); 
 $last_date = date('Y-m-d', strtotime('last Monday'));
 $date = date('Y-m-d');
+$today = date('Y-m-d');
 $todate = date('Y-m-d');
 $time = date('H:i:s');
 $datedtime = date("l \\t\h\e jS \of F Y \@ H:i:s");
@@ -44,6 +53,8 @@ echo date('Y-m-d', strtotime('last Monday -7 DAY'));?>
 </select>
 <label>From Date: </label>
 <input  name="fromdate" type="text" id="fromdate" onFocus="clearDefault(this)" value="<?php echo $last_date; ?>"/>
+<label>To Date: </label>
+<input  name="todate" type="text" id="todate" onFocus="clearDefault(this)" value="<?php echo $todate; ?>"/>
 <button class="buttons" id="submit" type="submit" name="submit">Review</button> 
 </fieldset>
 </form>
@@ -56,7 +67,8 @@ echo date('Y-m-d', strtotime('last Monday -7 DAY'));?>
 	<fieldset>
 	<legend>Append Review</legend>   
     <input type="text" name="last_date" value="<?php echo $last_date; ?>" id="last_date" style="display:none;">
-    <input type="text" name="todate" value="<?php echo ' to ' . $todate; ?>" id="todate" style="display:none;">
+    <input type="text" name="todate" value="<?php echo $todate; ?>" id="todate" style="display:none;">
+    <input type="text" name="thedate" value="<?php echo ' to ' . $todate; ?>" id="thedate" style="display:none;">
 	<label for="review_notes">Review Notes:  <span id="from" name="from"> </span><span id="to" name="to"> </span> </label>
     <br>
 	<textarea id="review_notes" class="review_notes" name="review_notes" type"textarea" onFocus="clearDefault(this)" style="color:#CCC">Items have been reviewed</textarea>

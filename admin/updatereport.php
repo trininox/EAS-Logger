@@ -3,7 +3,7 @@
  - Copyright 2011 
  - Stephen Bush 
  - trininox@gmail.com 
- - Version 0.4.21
+ - Version 0.4.26
  - Includes jQuery.js
 -->
 <?php
@@ -12,7 +12,8 @@
 
 if(isset($_GET['fromdate'])){
     $fromdate = 	htmlspecialchars(trim($_GET['fromdate']));	
-	$mystation = 	htmlspecialchars(trim($_GET['mystation']));	
+	$mystation = 	htmlspecialchars(trim($_GET['mystation']));
+	$todate = 	htmlspecialchars(trim($_GET['todate']));	
 	$review_notes = 	htmlspecialchars(trim($_GET['review_notes']));	
 	$chief_initials = 	htmlspecialchars(trim($_GET['chief_initials']));	
 	$todate = date('Y-m-d H:i:s');

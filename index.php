@@ -4,7 +4,7 @@
  - Copyright 2011 
  - Stephen Bush 
  - trininox@gmail.com 
- - Version 0.4.22
+ - Version 0.4.26
  - Includes jQuery.js
 -->
 <html>
@@ -26,7 +26,6 @@ $datedtime = date("l \\t\h\e jS \of F Y \@ H:i:s");
 
 </head>
 <body>
-Development Build
 <p class="header">Report for <?php echo $datedtime; ?> EST   Current Time: <span id="clock" name="clock"><?php include('function_clock.php'); ?></span> EST</p>
 <!--<button class="buttons" id="openall">Expand All</button>-->
 <button class="buttons" id="lpchecker">EAS Reciever Check</button>
