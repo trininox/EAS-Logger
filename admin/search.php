@@ -3,7 +3,7 @@
  - Copyright 2011 
  - Stephen Bush 
  - trininox@gmail.com 
- - Version 0.4.22
+ - Version 0.4.23
  - Includes jQuery.js
 -->
 <?php
@@ -19,7 +19,7 @@ $keyword2 = mysqli_real_escape_string($dbc, $keyword2);
 
 
 
-$query = "select * from logs where report_date BETWEEN $keyword2 AND NOW() AND (eas_type like '%$keyword%' or initials like '%$keyword%' or station like '%$keyword%' or eas_lp1 like '%$keyword%' or self_type like '%$keyword%' or tower_fail like '%$keyword%' or eas_from like '%$keyword%' or eas_error like '%$keyword%' or tower_fss like '%$keyword%')";
+$query = "select * from logs where report_date BETWEEN '$keyword2' AND NOW() AND (eas_type like '%$keyword%' or initials like '%$keyword%' or station like '%$keyword%' or eas_lp1 like '%$keyword%' or self_type like '%$keyword%' or tower_fail like '%$keyword%' or eas_from like '%$keyword%' or eas_error like '%$keyword%' or tower_fss like '%$keyword%')";
 
 //echo $query;
 $result = mysqli_query($dbc,$query);
