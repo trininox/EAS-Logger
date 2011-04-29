@@ -3,7 +3,7 @@
  - Copyright 2011 
  - Stephen Bush 
  - trininox@gmail.com 
- - Version 0.4.21
+ - Version 0.4.28
  - Includes jQuery.js
 -->
 <?php
@@ -33,11 +33,17 @@
 	<option value="WHOI">WHOI</option>
 	</select>
 	<label for="tower_fail">Failure Noted:</label>
-	<input id="tower_fail" class="textwide" name="tower_fail" size="100" type"text" value="Beacon  Out" onFocus="clearDefault(this)" style="color:#CCC">
+	<a class="tooltip" href="#">
+    <input id="tower_fail" class="textwide" name="tower_fail" size="100" type"text" value="Beacon  Out" onFocus="clearDefault(this)" style="color:#CCC">
+    <span class="custom info"><img src="images/Info.png" alt="Info" height="48" width="48" /><em>Failure Notes</em>Enter the details about the lighting failure<br>Report this to engineering</span></a>
 	<label for="fail_initials">Initials:</label>
 	<input id="fail_initials" class="text" name="fail_initials"size="20" type="text" value="Initials" onFocus="clearDefault(this)" style="color:#CCC" maxlength="3">
 	<label for="tower_fss">Requiring FSS Notification:</label>
-	<input id="tower_fss" class="check" name="tower_fss" size="10" type="checkbox">
+	<a class="tooltip" href="#">
+    <input id="tower_fss" class="check" name="tower_fss" size="10" type="checkbox">
+    <span class="custom critical"><img src="images/Critical.png" alt="Critcial" height="48" width="48" /><em>Important!</em>If there is a tower light failure that lasts or will last more than 30 minutes and affects a top light
+or any flashing light, regardless of position, especially "not working at all" or "top beacon not
+working"</span></a>
     <select id="instruction" name="instruction" class="instruction">
     <option value="NONE">Instruction for...</option>
 	<option value="WPTA">WPTA</option>
@@ -46,16 +52,24 @@
 	</select>
 	<br>
 	<label for="fss_notified">FSS Notified:</label>
+    <a class="tooltip" href="#">
 	<input id="fss_notified" class="textwide" name="fss_notified"size="20" type="text">
+    <span class="custom help"><img src="images/Help.png" alt="Help" height="48" width="48" /><em>Notified?</em>Enter the name of the individual reporting to via the hotline</span></a>
 	<label for="fss_notam_assign">NOTAM Assigned:</label>
+    <a class="tooltip" href="#">
 	<input id="fss_notam_assign" class="text" name="fss_notam_assign" size="20" type="text">
+    <span class="custom help"><img src="images/Help.png" alt="Help" height="48" width="48" /><em>NOTAM?</em>Enter the number assigned for the incident<br>Same as Antenna Structure Registration Number</span></a>
 	<label for="fss_initials">Initials:</label>
 	<input id="fss_initials" class="text" name="fss_initials" size="20" type="text" value="Initials" onFocus="clearDefault(this)" style="color:#CCC" maxlength="3">
 	<br>
 	<label for="fss_cleared">FSS Notified Resolution:</label>
-	<input id="fss_cleared" class="textwide" name="fss_cleared" size="20" type="text">
+	<a class="tooltip" href="#">
+    <input id="fss_cleared" class="textwide" name="fss_cleared" size="20" type="text">
+    <span class="custom help"><img src="images/Help.png" alt="Help" height="48" width="48" /><em>Notified?</em>Enter the name of the individual reporting the cancellation to</span></a>
 	<label for="fss_cancelled">Cancelled Date:</label>
-	<input id="fss_cancelled" class="text" name="fss_cancelled" size="20" type="text" value="">
+	<a class="tooltip" href="#">
+    <input id="fss_cancelled" class="text" name="fss_cancelled" size="20" type="text" value="">
+    <span class="custom help"><img src="images/Help.png" alt="Help" height="48" width="48" /><em>Date?</em>Enter the date the incident was cancelled using YYYY-MM-DD</span></a>
 	<label for="fss_cancelled_initials">Initials:</label>
 	<input id="fss_cancelled_initials" class="text" name="fss_cancelled_initials" size="20" type="text" value="Initials" onFocus="clearDefault(this)" style="color:#CCC" maxlength="3">
 	<button class="entry">Add Entry</button>
