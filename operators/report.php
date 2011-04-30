@@ -4,7 +4,7 @@
  - Copyright 2011 
  - Stephen Bush 
  - trininox@gmail.com 
- - Version 0.4.22
+ - Version 0.4.30
  - Includes jQuery.js
 -->
 <html>
@@ -25,7 +25,7 @@ require_once ('../function_connect.php');
 $result = mysql_query("SELECT * FROM logs ORDER BY report_update DESC LIMIT 1") or die (mysql_error());
 echo "<table border='1'>";
 echo "<tr>
-	
+	<th>index</th>
 	<th>station</th>
 	<th>report_date</th>
 	
@@ -50,14 +50,14 @@ echo "<tr>
 	<th>fss_cleared</th>
 	<th>fss_cancelled</th>
 	<th>fss_cancelled_initials</th>
-
+	
 	</tr>
 	";
 while($r=mysql_fetch_array($result))
 {	
    //the format is $variable = $r["nameofmysqlcolumn"];
    
-   
+   $index=$r["index"];
    $station=$r["station"];
    $report_date=$r["report_date"];
 
@@ -82,14 +82,14 @@ while($r=mysql_fetch_array($result))
    $fss_cleared=$r["fss_cleared"];
    $fss_cancelled=$r["fss_cancelled"];
    $fss_cancelled_intials=$r["fss_cancelled_initials"];
-
+   
 
 
       //display the row
    ?>  
 
    <tr bgcolor='white'>
-   
+   <th><?php echo $index ?></th>
    <th><?php echo $station ?></th>
    <th><?php echo $report_date ?></th>
    
@@ -114,7 +114,7 @@ while($r=mysql_fetch_array($result))
    <th><?php echo $fss_cleared ?></th>
    <th><?php echo $fss_cancelled ?></th>
    <th><?php echo $fss_cancelled_intials ?></th>
-
+   
    </tr>
    <?php 
 }

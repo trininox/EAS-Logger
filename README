@@ -1,5 +1,8 @@
-HTML/PHP/JS/CSS/MySQL Solution to keeping records of Emergency Alert System (EAS) messages recieved for broadcast. 
-As required by the FCC.
+Languages HTML/PHP/JS/CSS/MySQL 
+
+Solution to keeping records of Emergency Alert System (EAS) messages recieved for broadcast. 
+
+Following guidelines for documentation as required by the FCC.
 
 Served by PHP/HTML
 Database driven by MySQL
@@ -8,3 +11,33 @@ Styling by CSS3
 
 Copyright 2011 Stephen Bush
 trininox@gmail.com
+
+--- Revision History ---
+
+Version 0.4.30
+
+-Corrected an issue with updating chief reports to use the $todate instead of NOW().
+
+Version 0.4.29
+
+-Update the db columns that are searched by the admin search page.
+
+Version 0.4.28
+
+-Added tooltips for fields to describe the required data input.
+
+Version 0.4.26
+
+-Updated the chiefs review to use a date range of $fromdate and $todate instead of $fromdate and NOW().
+
+Version 0.4.22
+
+-Update some formatting. 
+-Added more columns to the admin search.
+-Removed code to hide the operator forms after submission.
+-Added Uppercase function to field variables.
+
+Version 0.4.21
+
+-Initial open-source release
+-Live version for use in production phase
