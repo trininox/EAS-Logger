@@ -134,7 +134,7 @@
 					var eas_error     = $('#eas_error').attr('value');
 					var eas_aired     = $('#eas_aired').attr('value');
 					 
-				if (eas_from==null || eas_from==""){
+				if (eas_from==null || eas_from=="" || eas_from=="WAJI "){
   					alert("The 'From:' field must be entered");
 					event.preventDefault();
  					return false;}

@@ -103,7 +103,7 @@ $datedtime = date("l \\t\h\e jS \of F Y \@ H:i:s");
 <span class="custom help"><img src="images/Help.png" alt="Help" height="48" width="48" /><em>Time?</em>Time the alert was decoded by the DASDEC</span></a>
 <label for="eas_from">From:</label>
 <a class="tooltip" href="#">
-<input id="eas_from" class="text" name="eas_from" size="20" type="text" value="WAJI" onFocus="clearDefault(this)" style="color:#CCC" maxlength="6">
+<input id="eas_from" class="text" name="eas_from" size="20" type="text" value="WAJI " onFocus="clearDefault(this)" style="color:#CCC" maxlength="6">
 <span class="custom help"><img src="images/Help.png" alt="Help" height="48" width="48" /><em>From?</em>The station the alert was sent by<br>WAJI, WMEE, WKIX, Etc..</span></a>
 <label for="eas_initials">Initials:</label>
 <input id="eas_initials" class="text" name="eas_initials" size="20" type="text" value="Initials" onFocus="clearDefault(this)" style="color:#CCC" maxlength="3">
