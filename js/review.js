@@ -3,9 +3,10 @@
  * Copyright 2011 
  * Stephen Bush 
  * trininox@gmail.com 
- * Version 0.4.26
+ * Version 0.5.6
  * Includes jQuery.js
  */
+
 function clearDefault(el) {
   	if (el.defaultValue==el.value) el.value = ""
 	if (el.style) el.style.cssText = ""
@@ -80,6 +81,29 @@ $(document).ready(function() {
 				});  
 			  return false;
 			
-		});   
-});
+		});
+		$("#fromdate").keyup(function()
+			{
+			var fromdate = $(this).val();
+			var dataString = 'fromdate='+ fromdate;
+				
+				if(fromdate.length>8)
+
+				{
+				$.ajax({
+				type: "GET",
+				url: "admin/date.php",
+				data: dataString,
+				success: function(server_response)
+				{
+
+				$('#todate').val(server_response).show();
+				
+				}
+				});
+				}return false;
+				});
+		});
+	     
+
 	  

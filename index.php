@@ -4,7 +4,7 @@
  - Copyright 2011 
  - Stephen Bush 
  - trininox@gmail.com 
- - Version 0.4.28
+ - Version 0.5.6
  - Includes jQuery.js
 -->
 <html>
@@ -19,14 +19,19 @@ require_once ('function_connect.php');
 
 $date = date('Y-m-d');
 $time = date('H:i:s');
-$datedtime = date("l \\t\h\e jS \of F Y \@ H:i:s");
+$dated = date("l \\t\h\e jS \of F Y ");
 ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>EAS Log <?php echo $datedtime; ?> EST</title>
+<title>EAS Log <?php echo $dated; ?> </title>
 
 </head>
 <body>
-<p class="header">Report for <?php echo $datedtime; ?> EST   Current Time: <span id="clock" name="clock"><?php include('function_clock.php'); ?></span> EST</p>
+<p class="header">Current Date: <?php echo $dated; ?> --   Current Time: <span id="clock" name="clock"><?php include('function_clock.php'); ?></span> EST ---
+DASDEC Links -
+<a href="http://10.0.3.80/dasdec/dasdec.csp" target="_blank" class="hyperlink">WPTA</a> -
+<a href="http://10.0.3.81/dasdec/dasdec/csp" target="_blank" class="hyperlink">WISE</a> -
+<a href="http://10.0.3.105/dasdec/dasdec.csp" target="_blank" class="hyperlink">WMYD</a> -
+<a href="http://10.0.3.123/dasdec/dasdec.csp" target="_blank" class="hyperlink">PEORIA MAIN</a></p>
 <!--<button class="buttons" id="openall">Expand All</button>-->
 <button class="buttons" id="lpchecker">EAS Reciever Check</button>
 <button class="buttons" id="eastester">Log Recieved EAS</button>

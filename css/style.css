@@ -3,7 +3,7 @@
  * Copyright 2011 
  * Stephen Bush 
  * trininox@gmail.com 
- * Version 0.4.28
+ * Version 0.5.6
  */
 body {
 	background-color: #ececec;
@@ -283,7 +283,17 @@ button.entry::-moz-focus-inner {
 
 #wpta,#whoi,#week,#wmyd{display:none;}
 
-
+.hyperlink {
+	display:inline;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#565656;
+	font-style:normal;
+	text-decoration:none;
+	}
+.hyperlink:hover {
+	text-decoration:underline;
+	}
 .tooltip {
 			border-bottom: 0px dotted #000000; color: #000000; outline: none;
 			cursor: help; text-decoration: none;
